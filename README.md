@@ -1,6 +1,6 @@
 # Dooray MCP Server
 
-[![MCP Badge](https://lobehub.com/badge/mcp-full/jhl8041-dooray-mcp?theme=light)](https://lobehub.com/mcp/jhl8041-dooray-mcp)
+[![MCP Badge](https://lobehub.com/badge/mcp-full/GeonheeYe-dooray-mcp?theme=light)](https://lobehub.com/mcp/GeonheeYe-dooray-mcp)
 
 MCP server for [Dooray!](https://dooray.com) - enabling AI assistants to interact with Dooray projects, tasks, wikis, and more.
 
@@ -8,14 +8,14 @@ MCP server for [Dooray!](https://dooray.com) - enabling AI assistants to interac
 
 ### NPM (권장)
 ```bash
-npm install -g @jhl8041/dooray-mcp
+npm install -g @geonheeye/dooray-mcp
 ```
 
 ### Smithery
-[![smithery badge](https://smithery.ai/badge/@jhl8041/dooray-mcp)](https://smithery.ai/server/@jhl8041/dooray-mcp)
+[![smithery badge](https://smithery.ai/badge/@geonheeye/dooray-mcp)](https://smithery.ai/server/@geonheeye/dooray-mcp)
 
 ```bash
-npx -y @smithery/cli install @jhl8041/dooray-mcp --client claude
+npx -y @smithery/cli install @geonheeye/dooray-mcp --client claude
 ```
 
 ## 설정
@@ -32,7 +32,7 @@ export DOORAY_API_TOKEN=<발급 받은 API 토큰>
 
 ### 1. Claude Code 등록
 ```bash
-claude mcp add -s user dooray-mcp npx @jhl8041/dooray-mcp@latest
+claude mcp add -s user dooray-mcp npx @geonheeye/dooray-mcp@latest
 ```
 
 ### 2. Claude Desktop 설정
@@ -43,7 +43,7 @@ claude mcp add -s user dooray-mcp npx @jhl8041/dooray-mcp@latest
 {
   "mcpServers": {
     "dooray": {
-      "command": "npx @jhl8041/dooray-mcp@latest",
+      "command": "npx @geonheeye/dooray-mcp@latest",
       "env": { "DOORAY_API_TOKEN": "발급받은_토큰" }
     }
   }

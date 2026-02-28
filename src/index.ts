@@ -81,6 +81,12 @@ import { deleteWikiPageFileTool, deleteWikiPageFileHandler, deleteWikiPageFileSc
 import { uploadWikiFileTool, uploadWikiFileHandler, uploadWikiFileSchema } from './tools/wiki/upload-wiki-file.js';
 import { downloadWikiAttachFileTool, downloadWikiAttachFileHandler, downloadWikiAttachFileSchema } from './tools/wiki/download-wiki-attach-file.js';
 
+// Messenger tools
+import { getChannelsTool, getChannelsHandler, getChannelsSchema } from './tools/messenger/get-channels.js';
+import { sendChannelMessageTool, sendChannelMessageHandler, sendChannelMessageSchema } from './tools/messenger/send-channel-message.js';
+import { sendDirectMessageTool, sendDirectMessageHandler, sendDirectMessageSchema } from './tools/messenger/send-direct-message.js';
+import { getChannelMessagesTool, getChannelMessagesHandler, getChannelMessagesSchema } from './tools/messenger/get-channel-messages.js';
+
 // Load environment variables
 dotenv.config();
 
@@ -151,6 +157,12 @@ const toolRegistry = {
   'delete-wiki-page-file': { handler: deleteWikiPageFileHandler, schema: deleteWikiPageFileSchema },
   'upload-wiki-file': { handler: uploadWikiFileHandler, schema: uploadWikiFileSchema },
   'download-wiki-attach-file': { handler: downloadWikiAttachFileHandler, schema: downloadWikiAttachFileSchema },
+
+  // Messenger tools
+  'get-messenger-channels': { handler: getChannelsHandler, schema: getChannelsSchema },
+  'send-messenger-channel-message': { handler: sendChannelMessageHandler, schema: sendChannelMessageSchema },
+  'send-messenger-direct-message': { handler: sendDirectMessageHandler, schema: sendDirectMessageSchema },
+  'get-messenger-channel-messages': { handler: getChannelMessagesHandler, schema: getChannelMessagesSchema },
 };
 
 /**
@@ -217,6 +229,12 @@ const tools = [
   deleteWikiPageFileTool,
   uploadWikiFileTool,
   downloadWikiAttachFileTool,
+
+  // Messenger tools
+  getChannelsTool,
+  sendChannelMessageTool,
+  sendDirectMessageTool,
+  getChannelMessagesTool,
 ];
 
 /**

@@ -1,5 +1,5 @@
 {
-  "name": "@jhl8041/dooray-mcp",
+  "name": "@geonheeye/dooray-mcp",
   "version": "0.1.13",
   "description": "MCP server for Dooray",
   "main": "dist/index.js",
@@ -24,19 +24,19 @@
     "ai",
     "llm"
   ],
-  "author": "Jae Hyung Lee",
+  "author": "GeonheeYe",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhl8041/dooray-mcp.git"
+    "url": "https://github.com/GeonheeYe/dooray-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/jhl8041/dooray-mcp/issues"
+    "url": "https://github.com/GeonheeYe/dooray-mcp/issues"
   },
-  "homepage": "https://github.com/jhl8041/dooray-mcp#readme",
+  "homepage": "https://github.com/GeonheeYe/dooray-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",
     "axios": "^1.7.9",

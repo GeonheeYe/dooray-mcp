@@ -19,7 +19,7 @@ startCommand:
   commandFunction: |
     (config) => ({
       command: 'npx',
-      args: ['@jhl8041/dooray-mcp@latest'],
+      args: ['@geonheeye/dooray-mcp@latest'],
       env: {
         DOORAY_API_TOKEN: config.DOORAY_API_TOKEN,
         DOORAY_API_BASE_URL: config.DOORAY_API_BASE_URL || 'https://api.dooray.com'
