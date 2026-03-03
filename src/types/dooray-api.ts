@@ -806,7 +806,7 @@ export interface BoardArticle {
   boardId?: string;
   subject: string;
   body?: {
-    mimeType: string;
+    mimeType: 'text/x-markdown' | 'text/html';
     content: string;
   };
   creator?: {
