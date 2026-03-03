@@ -88,11 +88,6 @@ import { sendChannelMessageTool, sendChannelMessageHandler, sendChannelMessageSc
 import { sendDirectMessageTool, sendDirectMessageHandler, sendDirectMessageSchema } from './tools/messenger/send-direct-message.js';
 import { getChannelMessagesTool, getChannelMessagesHandler, getChannelMessagesSchema } from './tools/messenger/get-channel-messages.js';
 
-// Board tools
-import { getBoardListTool, getBoardListHandler, getBoardListSchema } from './tools/board/get-board-list.js';
-import { getBoardArticleListTool, getBoardArticleListHandler, getBoardArticleListSchema } from './tools/board/get-board-article-list.js';
-import { getBoardArticleTool, getBoardArticleHandler, getBoardArticleSchema } from './tools/board/get-board-article.js';
-import { createBoardArticleTool, createBoardArticleHandler, createBoardArticleSchema } from './tools/board/create-board-article.js';
 
 // Load environment variables
 dotenv.config();
@@ -172,11 +167,6 @@ const toolRegistry = {
   'send-messenger-direct-message': { handler: sendDirectMessageHandler, schema: sendDirectMessageSchema },
   'get-messenger-channel-messages': { handler: getChannelMessagesHandler, schema: getChannelMessagesSchema },
 
-  // Board tools
-  'get-board-list': { handler: getBoardListHandler, schema: getBoardListSchema },
-  'get-board-article-list': { handler: getBoardArticleListHandler, schema: getBoardArticleListSchema },
-  'get-board-article': { handler: getBoardArticleHandler, schema: getBoardArticleSchema },
-  'create-board-article': { handler: createBoardArticleHandler, schema: createBoardArticleSchema },
 };
 
 /**
@@ -251,11 +241,6 @@ const tools = [
   sendDirectMessageTool,
   getChannelMessagesTool,
 
-  // Board tools
-  getBoardListTool,
-  getBoardArticleListTool,
-  getBoardArticleTool,
-  createBoardArticleTool,
 ];
 
 /**

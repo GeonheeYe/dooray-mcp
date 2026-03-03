@@ -102,6 +102,12 @@ claude mcp add -s user dooray-mcp npx @geonheeye/dooray-mcp@latest
 - `update-wiki-page-comment` - 위키 페이지 댓글 수정
 - `delete-wiki-page-comment` - 위키 페이지 댓글 삭제
 
+### 메신저
+- `get-messenger-channels` - 채널 목록
+- `send-messenger-channel-message` - 채널 메시지 전송
+- `send-messenger-direct-message` - DM 전송
+- `get-messenger-channel-messages` - 채널 메시지 조회
+
 ### 위키 파일
 - `upload-wiki-file` - 위키에 파일 업로드 (페이지 생성 전 pre-upload용, attachFileId 반환)
 - `upload-wiki-page-file` - 기존 위키 페이지에 파일 업로드
