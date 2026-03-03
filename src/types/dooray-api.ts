@@ -789,3 +789,52 @@ export interface MemberSearchResult {
   userCode: string;
   externalEmailAddress: string;
 }
+
+// ============================================================================
+// Board API Types
+// ============================================================================
+
+export interface Board {
+  id: string;
+  name: string;
+  description?: string;
+  scope?: string;
+}
+
+export interface BoardArticle {
+  id: string;
+  boardId?: string;
+  subject: string;
+  body?: {
+    mimeType: string;
+    content: string;
+  };
+  creator?: {
+    type: string;
+    member?: {
+      organizationMemberId: string;
+    };
+  };
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface BoardListParams {
+  boardPermission?: 'canwrite' | 'canread';
+}
+
+export interface BoardArticleListParams {
+  boardId: string;
+  page?: number;
+  size?: number;
+  sort?: string;
+}
+
+export interface CreateBoardArticleParams {
+  boardId: string;
+  subject: string;
+  body?: {
+    mimeType: 'text/x-markdown' | 'text/html';
+    content: string;
+  };
+}
