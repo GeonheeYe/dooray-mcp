@@ -5,9 +5,9 @@
  */
 
 import axios, { AxiosInstance } from 'axios';
-import { getClient } from './client.js';
 import { Board, BoardArticle, BoardListParams, BoardArticleListParams, CreateBoardArticleParams } from '../types/dooray-api.js';
 import { logger } from '../utils/logger.js';
+import * as commonApi from './common.js';
 
 const BOARD_BASE = '/v2/wapi/board';
 
@@ -26,7 +26,7 @@ function getBoardAxios(): AxiosInstance {
     throw new Error('DOORAY_API_TOKEN 환경변수가 필요합니다.');
   }
 
-  return axios.create({
+  const instance = axios.create({
     baseURL: tenantUrl,
     timeout: 30000,
     headers: {
@@ -34,14 +34,27 @@ function getBoardAxios(): AxiosInstance {
       Authorization: `dooray-api ${apiToken}`,
     },
   });
+
+  instance.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      if (error.response) {
+        const { status, data } = error.response;
+        const message = data?.header?.resultMessage || data?.message || 'Board API request failed';
+        throw new Error(`Board API Error ${status}: ${message}`);
+      }
+      throw new Error(`Board API Network Error: ${error.message}`);
+    }
+  );
+
+  return instance;
 }
 
 /**
  * 현재 사용자의 조직 ID 조회
  */
 async function getOrgId(): Promise<string> {
-  const client = getClient();
-  const me = await client.get<{ defaultOrganization: { id: string } }>('/common/v1/members/me');
+  const me = await commonApi.getMyMemberInfo();
   return me.defaultOrganization.id;
 }
 

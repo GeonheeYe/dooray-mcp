@@ -9,7 +9,7 @@ import { formatError } from '../../utils/errors.js';
 
 export const getBoardListSchema = z.object({
   boardPermission: z
-    .enum(['canwrite', 'canread'])
+    .enum(['canwrite'])
     .optional()
     .describe('필터: canwrite=글쓰기 가능한 게시판만, 생략 시 전체'),
 });
@@ -41,8 +41,8 @@ Returns: 게시판 ID, 이름, 설명 목록`,
     properties: {
       boardPermission: {
         type: 'string',
-        enum: ['canwrite', 'canread'],
-        description: '필터: canwrite=글쓰기 가능한 게시판만',
+        enum: ['canwrite'],
+        description: '필터: canwrite=글쓰기 가능한 게시판만 (확인된 값)',
       },
     },
   },

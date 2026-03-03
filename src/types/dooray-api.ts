@@ -820,7 +820,7 @@ export interface BoardArticle {
 }
 
 export interface BoardListParams {
-  boardPermission?: 'canwrite' | 'canread';
+  boardPermission?: 'canwrite';
 }
 
 export interface BoardArticleListParams {
